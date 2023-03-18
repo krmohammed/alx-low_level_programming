@@ -1,20 +1,20 @@
 #include <stdio.h>
 /**
  * main - entry point
- * Description - prints all digits of base 10
+ * Description - print digits in base 10 with putchar
  * Return: always 0
  */
 
 int main(void)
 {
-	int i = 0;
+	int i = 48;
 
-	while (i < 0)
+	while (i <= 57)
 	{
-		printf("%d", i);
+		putchar(i);
 		i++;
 	}
-	printf("\n");
+	putchar('\n');
 
 	return (0);
 }

@@ -12,7 +12,7 @@ int main(void)
 	int space = 32;
 	int comma = 44;
 
-	for (i = 0; i < 98; i++)
+	for (i = 0; i < 9; i++)
 	{
 		for (j = i + 1; j <= 99; j++)
 		{

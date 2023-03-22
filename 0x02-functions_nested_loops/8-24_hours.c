@@ -7,14 +7,17 @@
 
 void jack_bauer(void)
 {
-	int i = 0, j, k, l;
+	int i = 48, j, k, l;
 
 	while (i < 51)
 	{
+		j = 48;
 		while (j < 52)
 		{
+			k = 48;
 			while (k < 54)
 			{
+				l = 48;
 				while (l <= 57)
 				{
 					_putchar(i);

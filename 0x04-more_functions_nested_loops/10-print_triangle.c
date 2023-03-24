@@ -2,6 +2,7 @@
 
 /**
  * print_triangle - prints out the shape of a triangle
+ * @size: the size of the triangle
  *
  */
 

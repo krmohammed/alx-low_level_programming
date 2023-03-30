@@ -22,7 +22,7 @@ char *leet(char *s)
 
 		s[i] = (a * '4') + (e * '3') + (o * '0') +
 			(t * '7') + (l * '1') +
-			c * (!a * !e * !o * !t * !l);;
+			c * (!a * !e * !o * !t * !l);
 	}
 
 	return (s);

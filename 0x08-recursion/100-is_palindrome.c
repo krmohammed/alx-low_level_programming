@@ -1,6 +1,25 @@
 #include "main.h"
 
 /**
+ * _strlen_recursion - returns the length of a string
+ * @s: string whose length is to be calculated
+ *
+ * Return: length of string
+ */
+
+int _strlen_recursion(char *s)
+{
+	if (*s == '\0')
+	{
+		return (0);
+	}
+	else
+	{
+		return (_strlen_recursion(s + 1) + 1);
+	}
+}
+
+/**
  * palindrome_check - checks if a string is the same when reversed
  * @s: string to be checked
  * @a: starting index
@@ -29,12 +48,8 @@ int palindrome_check(char *s, int a, int z)
 
 int is_palindrome(char *s)
 {
-	int len = 0;
+	int len = _strlen_recursion(s);
 
-	while (s[len] != '\0')
-	{
-		len++;
-	}
 	if (len <= 1)
 		return (1);
 

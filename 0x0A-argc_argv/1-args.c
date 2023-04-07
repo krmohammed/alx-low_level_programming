@@ -2,8 +2,7 @@
 #include <stdlib.h>
 
 /**
- * main - prints the number of arguments at standard input of the program to
-          standard output
+ * main - prints the number of arguments at standard input of the program
  * @argc: number of arguments passed to this program in the command line
  * @argv: array of the arguments passed
  *

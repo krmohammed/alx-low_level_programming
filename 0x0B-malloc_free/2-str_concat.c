@@ -37,7 +37,7 @@ char *str_concat(char *s1, char *s2)
 	concat[len1 + i] = '\0';
 
 	if (concat == NULL)
-		return NULL;
+		return (NULL);
 
 	return (concat);
 }

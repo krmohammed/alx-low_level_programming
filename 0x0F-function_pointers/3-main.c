@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 4)
 	{
-		printf("Error 98\n");
+		printf("Error\n");
 		exit(98);
 	}
 
@@ -26,12 +26,12 @@ int main(int argc, char *argv[])
 
 	if (f_select == NULL)
 	{
-		printf("Error 99\n");
+		printf("Error\n");
 		exit(99);
 	}
 	if ((argv[2][0] == '/' || argv[2][0] == '%') && num2 == 0)
 	{
-		printf("Error 100\n");
+		printf("Error\n");
 		exit(100);
 	}
 

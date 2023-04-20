@@ -50,7 +50,7 @@ void opcode_printer(char *pointer, int n_bytes)
 
 	for (i = 0; i < n_bytes; i++)
 	{
-		printf("%02x ", pointer[i] && 0xff);
+		printf("%02x ", pointer[i] & 0xff);
 	}
 	printf("\n");
 }

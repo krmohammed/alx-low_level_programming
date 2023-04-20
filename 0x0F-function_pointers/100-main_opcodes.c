@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 	}
 
 	void (*print_opcode)(char*, int) = &opcode_printer;
-	char *pointer = (char*)print_opcode;
+	char *pointer = (char *)print_opcode;
 
 	print_opcode(pointer, n_bytes);
 

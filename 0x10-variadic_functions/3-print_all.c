@@ -1,11 +1,8 @@
 #include "variadic_functions.h"
-
 /**
  * print_all - prints anything
  * @format: format of argument (data_type)
- *
  */
-
 void print_all(const char * const format, ...)
 {
 	va_list anything;
@@ -13,7 +10,6 @@ void print_all(const char * const format, ...)
 	char *s;
 
 	va_start(anything, format);
-
 	i = 0;
 	while (format[i] && format)
 	{
@@ -37,15 +33,12 @@ void print_all(const char * const format, ...)
 			}
 			printf("(nil)");
 			break;
-		default:
-			break;
 		}
-		i++;
 		if ((format[i] == 'c' || format[i] == 'i' || format[i] == 'f'
 		     || format[i] == 's') && format[i + 1])
 			printf(", ");
+		i++;
 	}
 	printf("\n");
-
 	va_end(anything);
 }

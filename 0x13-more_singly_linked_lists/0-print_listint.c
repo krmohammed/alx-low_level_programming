@@ -15,10 +15,6 @@ size_t print_listint(const listint_t *h)
 	if (h == NULL)
 		return (n_nodes);
 
-	p = malloc(sizeof(listint_t));
-	if (p == NULL)
-		return (n_nodes);
-
 	p = h;
 
 	while (p != NULL)

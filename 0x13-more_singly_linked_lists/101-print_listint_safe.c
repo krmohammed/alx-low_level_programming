@@ -16,7 +16,7 @@ size_t print_listint_safe(const listint_t *head)
 		exit(98);
 
 	fast = head;
-	while (fast->next)
+	while (fast)
 	{
 		nodes++;
 		printf("[%p] %d\n", (void *)fast, fast->n);

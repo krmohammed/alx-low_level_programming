@@ -9,7 +9,7 @@
 
 size_t free_listint_safe(listint_t **h)
 {
-	listint_t *p1, *p2;
+	listint_t *p1;
 	int nodes = 0;
 
 	if (h == NULL || *h == NULL)
@@ -19,18 +19,21 @@ size_t free_listint_safe(listint_t **h)
 	while (p1 != NULL)
 	{
 		nodes++;
-		p2 = p1->next;
-		free(p1);
-
-		if ((void *)p2 >= (void *)p1)
+		if (*h >= (*h)->next)
 		{
-			*h = NULL;
-			return (nodes);
+			p1 = (*h)->next;
+			free(*h);
+			*h = p1;
 		}
-		p1 = p2;
+		else
+		{
+			free(*h);
+			*h = NULL;
+			break;
+		}
 	}
 
-	h = NULL;
+	*h = NULL;
 
 	return (nodes);
 }

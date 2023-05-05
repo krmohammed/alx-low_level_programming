@@ -29,7 +29,7 @@ unsigned int binary_to_uint(const char *b)
 			return (0);
 		conv /= 10;
 
-		power = 1;		
+		power = 1;
 		for (k = i; k > 0; k--)
 			power *= 2;
 		dec += temp * power;

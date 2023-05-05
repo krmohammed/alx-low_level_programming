@@ -9,31 +9,27 @@
 
 unsigned int binary_to_uint(const char *b)
 {
-	int dec = 0, j, len, conv, temp, i = 0, k, power;
+	int dec = 0, j, len, power;
 
 	if (b == NULL)
 		return (0);
 
 	for (len = 0; b[len] != '\0'; len++)
 		;
-	for (j = 0; b[j] != '\0'; j++)
-	{
-		if (b[j] < 48 || b[j] > 49)
-			return (0);
-	}
-	conv = atoi(b);
-	while (conv != 0)
-	{
-		temp = conv % 10;
-		if (temp > 1)
-			return (0);
-		conv /= 10;
 
-		power = 1;
-		for (k = i; k > 0; k--)
+	power = 1;
+	for (j = len - 1; b[j] != '\0'; j--)
+	{
+		if (j == len - 1)
+			power = 1;
+		else
 			power *= 2;
-		dec += temp * power;
-		i++;
+		if (b[j] == '1' || b[j] == '0')
+		{
+			dec += power * (b[j] - '0');
+		}
+		else
+			return (0);
 	}
 	return (dec);
 }

@@ -8,14 +8,14 @@
  * Return: 0 (Always)
  */
 
-int main(int argc, char **argc)
+int main(int argc, char **argv)
 {
-	int fd, td, n_write, n_read;
+	int fd, td, n_write, n_read, w_close, r_close;
 	char buff[1024];
 
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "Usage: %s file_from file_to\n", argv[0]);
 		exit(97);
 	}
 
@@ -34,22 +34,34 @@ int main(int argc, char **argc)
 		exit(99);
 	}
 
-	n_read = read(fd, buff, 1024);
+	while ((n_read = read(fd, buff, 1024)) > 0)
+	{
+		n_write = write(td, buff, n_read);
+		if (n_write != n_read)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s", argv[2]);
+			exit(99);
+		}
+	}
+
 	if (n_read == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s", argv[1]);
 		exit(98);
 	}
 
-	n_write = write(td, argv[2], n_read);
-	if (n_write == -1)
+	r_close = close(fd);
+	if (r_close == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s", argv[2]);
-		exit(99);
+		dprintf(STDERR_FILENO, "Can't close fd %d\n", fd);
+		exit(100);
 	}
 
-	close(td);
-	close(fd);
+	w_close = close(td);
+	if (w_close == -1)
+	{
+		dprintf(STDERR_FILENO, "Can't close fd %d\n", td);
+	}
 
 	return (0);
 }

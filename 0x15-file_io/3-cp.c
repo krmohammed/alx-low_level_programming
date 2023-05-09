@@ -36,8 +36,6 @@ int main(int argc, char **argv)
 		if (n_write != n_read)
 			err_msg("Error: Can't write to %s\n", argv[2], 99);
 	}
-	if ((write(td, "\n", 1)) != 1)
-		err_msg("Error: Can't write to %s", argv[2], 99);
 	if (n_read == -1)
 		err_msg("Error: Can't read from file %s\n", argv[1], 98);
 	if (close(fd) == -1)

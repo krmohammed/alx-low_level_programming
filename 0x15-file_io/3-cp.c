@@ -19,7 +19,6 @@ int main(int argc, char **argc)
 		exit(97);
 	}
 
-	
 	fd = open(argv[1], O_RDWR);
 	if (fd == -1)
 	{

@@ -14,7 +14,6 @@ int prime_check(int n, int l)
 		return (1);
 	else if (n % l == 0)
 		return (0);
-	
 
 	return (prime_check(n, l + 1));
 }

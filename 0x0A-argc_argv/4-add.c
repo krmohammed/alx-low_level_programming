@@ -22,7 +22,7 @@ int main(int argc, char **argv)
 	for (x = 1; argv[x] != NULL; x++)
 	{
 		y = 0;
-		while(argv[x][y])
+		while (argv[x][y])
 		{
 			if (argv[x][y] < '0' || argv[x][y] > '9')
 			{
@@ -37,4 +37,4 @@ int main(int argc, char **argv)
 	printf("%d\n", add);
 
 	return (0);
-}
+

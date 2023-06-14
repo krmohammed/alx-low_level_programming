@@ -41,7 +41,7 @@ char **strtow(char *str)
 	char **tow;
 	int i = 0, j, start = 0, end = 0, words, len;
 
-	if (str == NULL || *str == '\0' || (*str == ' ' && *(str + 1) == '\0'))
+	if (str == NULL || *str == '\0' || (*str == ' ' || *(str + 1) == '\0'))
 		return (NULL);
 	words = words_n(str);
 	tow = malloc(sizeof(char *) * (words + 1));

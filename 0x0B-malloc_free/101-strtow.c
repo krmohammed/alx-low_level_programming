@@ -37,20 +37,17 @@ int words_n(char *str)
  */
 
 char **strtow(char *str)
-
 {
 	char **tow;
-	int i, j, start = 0, end = 0, words, len;
+	int i = 0, j, start = 0, end = 0, words, len;
 
 	if (str == NULL || *str == '\0')
 		return (NULL);
-
 	words = words_n(str);
 	tow = malloc(sizeof(char *) * (words + 1));
 	if (tow == NULL)
 		return (NULL);
 
-	i = 0;
 	while (str[end])
 	{
 		if (str[end] != ' ' && (str[end + 1] == ' ' || str[end + 1] == '\0'))
@@ -68,10 +65,8 @@ char **strtow(char *str)
 			for (j = 0; j < len; j++)
 				tow[i][j] = str[start + j];
 			tow[i][j] = '\0';
-
 			i++;
 		}
-
 		if (str[end] != ' ')
 		{
 			if (start == -1)
@@ -79,10 +74,8 @@ char **strtow(char *str)
 		}
 		else
 			start = -1;
-
 		end++;
 	}
 	tow[i] = NULL;
-
 	return (tow);
 }

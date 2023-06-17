@@ -24,7 +24,7 @@ int _isdigit(int c)
  * print_err - prints an error message
  */
 
-void print_err()
+void print_err(void)
 {
 	_putchar('E');
 	_putchar('r');
@@ -76,7 +76,6 @@ void mul(char *n1, char *n2)
 		print_err();
 		exit(98);
 	}
-
 	for (x = len1 - 1; x >= 0; x--)
 	{
 		c = 0;
@@ -101,7 +100,6 @@ void mul(char *n1, char *n2)
 		_putchar(res[x++] + '0');
 	}
 	_putchar('\n');
-
 	free(res);
 }
 

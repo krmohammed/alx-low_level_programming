@@ -21,19 +21,33 @@ int _isdigit(int c)
 }
 
 /**
+ * print_err - prints an error message
+ */
+
+void print_err()
+{
+	_putchar('E');
+	_putchar('r');
+	_putchar('r');
+	_putchar('o');
+	_putchar('r');
+	_putchar('\n');
+}
+
+/**
  * is_valid_num - checks for the validity of a number
  * @n: number
  *
  * Return: 1 if number, 0 otherwise
  */
 
-int is_valid_num(char *num)
+int is_valid_num(char *n)
 {
-	while (*num)
+	while (*n)
 	{
-		if (_isdigit(*num))
+		if (_isdigit(*n))
 			return (1);
-		num++;
+		n++;
 	}
 	return (0);
 }
@@ -59,12 +73,7 @@ void mul(char *n1, char *n2)
 	res = calloc(len, sizeof(int));
 	if (res == NULL)
 	{
-		_putchar('E');
-		_putchar('r');
-		_putchar('r');
-		_putchar('o');
-		_putchar('r');
-		_putchar('\n');
+		print_err();
 		exit(98);
 	}
 
@@ -108,23 +117,13 @@ int main(int argc, char **argv)
 {
 	if (argc != 3)
 	{
-		_putchar('E');
-		_putchar('r');
-		_putchar('r');
-		_putchar('o');
-		_putchar('r');
-		_putchar('\n');
+		print_err();
 		exit(98);
 	}
 
 	if (!is_valid_num(argv[1]) || !is_valid_num(argv[2]))
 	{
-		_putchar('E');
-		_putchar('r');
-		_putchar('r');
-		_putchar('o');
-		_putchar('r');
-		_putchar('\n');
+		print_err();
 		exit(98);
 	}
 

@@ -1,5 +1,7 @@
 #ifndef DOG_H
-#define DOG_Hs
+#define DOG_H
+
+#include <stdlib.h>
 
 /**
  * dog - all about a dog

@@ -1,12 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/**
- * opcode_printer - prints opcodes of main function
- * @bytes: number of bytes
- *
- */
-
 void opcode_printer(int bytes);
 
 /**
@@ -40,12 +34,18 @@ int main(int argc, char **argv)
 	return (0);
 }
 
+/**
+ * opcode_printer - prints opcodes of main function
+ * @bytes: number of bytes
+ *
+ */
+
 void opcode_printer(int bytes)
 {
-        int i;
-        unsigned char *main_ptr = (unsigned char *)main;
+	int i;
+	unsigned char *main_ptr = (unsigned char *)main;
 
-        for (i = 0; i < bytes; i++)
-                printf("%02x ", main_ptr[i]);
-        printf("\n");
+	for (i = 0; i < bytes; i++)
+		printf("%02x ", main_ptr[i]);
+	printf("\n");
 }

@@ -10,7 +10,7 @@
 
 int main(int argc, char **argv)
 {
-	int op1, op2, answer;
+	long int op1, op2, answer;
 	char *operator;
 	int (*select_func)(int, int);
 
@@ -38,7 +38,7 @@ int main(int argc, char **argv)
 	}
 
 	answer = select_func(op1, op2);
-	printf("%d\n", answer);
+	printf("%ld\n", answer);
 
 	return (0);
 }

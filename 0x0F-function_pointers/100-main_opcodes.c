@@ -47,7 +47,7 @@ int main(int argc, char **argv)
 
 	opcode_ptr = opcode_printer;
 	ptr = (char *)opcode_ptr;
-	opcode_printer(ptr, bytes);
+	opcode_ptr(ptr, bytes);
 
 	return (0);
 }

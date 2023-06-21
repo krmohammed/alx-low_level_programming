@@ -8,12 +8,13 @@
  *
  */
 
-void opcode_printer(char *ptr, int bytes)
+void opcode_printer(int bytes)
 {
 	int i;
+	unsigned char *main_ptr = (unsigned char*)opcode_printer;
 
 	for (i = 0; i < bytes; i++)
-		printf("%02x", ptr[i] & 0xff);
+		printf("%02x", main_ptr[i]);
 	printf("\n");
 }
 
@@ -28,8 +29,6 @@ void opcode_printer(char *ptr, int bytes)
 int main(int argc, char **argv)
 {
 	int bytes;
-	void (*opcode_ptr)(char *, int);
-	char *ptr;
 
 	if (argc != 2)
 	{
@@ -45,9 +44,7 @@ int main(int argc, char **argv)
 		exit(2);
 	}
 
-	opcode_ptr = opcode_printer;
-	ptr = (char *)opcode_ptr;
-	opcode_ptr(ptr, bytes);
+	opcode_printer(bytes);
 
 	return (0);
 }

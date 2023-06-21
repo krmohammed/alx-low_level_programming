@@ -7,15 +7,7 @@
  *
  */
 
-void opcode_printer(int bytes)
-{
-	int i;
-	unsigned char *main_ptr = (unsigned char *)opcode_printer;
-
-	for (i = 0; i < bytes; i++)
-		printf("%02x ", main_ptr[i]);
-	printf("\n");
-}
+void opcode_printer(int bytes);
 
 /**
  * main - entry point to the program
@@ -48,3 +40,12 @@ int main(int argc, char **argv)
 	return (0);
 }
 
+void opcode_printer(int bytes)
+{
+        int i;
+        unsigned char *main_ptr = (unsigned char *)main;
+
+        for (i = 0; i < bytes; i++)
+                printf("%02x ", main_ptr[i]);
+        printf("\n");
+}

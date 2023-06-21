@@ -3,7 +3,6 @@
 
 /**
  * opcode_printer - prints opcodes of main function
- * @ptr: function pointer
  * @bytes: number of bytes
  *
  */
@@ -11,7 +10,7 @@
 void opcode_printer(int bytes)
 {
 	int i;
-	unsigned char *main_ptr = (unsigned char*)opcode_printer;
+	unsigned char *main_ptr = (unsigned char *)opcode_printer;
 
 	for (i = 0; i < bytes; i++)
 		printf("%02x", main_ptr[i]);

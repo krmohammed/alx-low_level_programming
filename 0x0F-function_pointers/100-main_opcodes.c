@@ -13,7 +13,7 @@ void opcode_printer(int bytes)
 	unsigned char *main_ptr = (unsigned char *)opcode_printer;
 
 	for (i = 0; i < bytes; i++)
-		printf("%02x", main_ptr[i]);
+		printf("%02x ", main_ptr[i]);
 	printf("\n");
 }
 

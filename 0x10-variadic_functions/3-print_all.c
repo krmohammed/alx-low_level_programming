@@ -43,6 +43,8 @@ void print_all(const char * const format, ...)
 			printf(", ");
 		i++;
 	}
+	else
+		return;
 	printf("\n");
 	va_end(pa);
 }

@@ -34,7 +34,7 @@ int main(int argc, char **argv)
 	if ((argv[2][0] == '/' || argv[2][0] == '%') && op2 == 0)
 	{
 		printf("Error\n");
-		exit(101);
+		exit(100);
 	}
 
 	answer = select_func(op1, op2);

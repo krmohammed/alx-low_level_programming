@@ -1,7 +1,5 @@
 #include "main.h"
 /**
- * exit_msg - prints an exit msg
-/**
  * main - copies content of a file to another file
  * @argc: number of cmd line arguments
  * @argv: array of cmd line arguments

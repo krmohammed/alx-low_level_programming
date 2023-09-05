@@ -1,4 +1,19 @@
 #include "main.h"
+
+/**
+ * prerr - prints error
+ * @sta: exit status number
+ * @errm: error message
+ * @ex: extra message
+ *
+ */
+
+void prerr(int sta, char *errm, char *ex)
+{
+	dprintf(STDERR_FILENO, errm, ex);
+	exit(sta);
+}
+
  /**
  * main - copies content of a file to another file
  * @argc: number of cmd line arguments
@@ -13,36 +28,21 @@ int main(int argc, char **argv)
 	char buff[1024];
 
 	if (argc != 3)
-	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-		exit(97);
-	}
+		prerr(97, "Usage: cp file_from file_to\n", "");
 	fd = open(argv[1], O_RDWR);
 	if (fd == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s", argv[1]);
-		exit(98);
-	}
+		prerr(98, "Error: Can't read from file %s", argv[1]);
 	td = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (td == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s", argv[2]);
-		exit(99);
-	}
+		prerr(99, "Error: Can't write to %s", argv[2]);
 	while ((n_read = read(fd, buff, 1024)) > 0)
 	{
 		n_write = write(td, buff, n_read);
 		if (n_write != n_read)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't write to %s", argv[2]);
-			exit(99);
-		}
+			prerr(99, "Error: Can't write to %s", argv[2]);
 	}
 	if (n_read == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s", argv[1]);
-		exit(98);
-	}
+		prerr(98, "Error: Can't read from file %s", argv[1]);
 	r_close = close(fd);
 	if (r_close == -1)
 	{

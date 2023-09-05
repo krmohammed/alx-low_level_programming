@@ -2,13 +2,13 @@
 
 void print_error(int status, char *err_message, char *extra);
 
- /**
-  * main - copies content of a file to another file
-  * @argc: number of cmd line arguments
-  * @argv: array of cmd line arguments
-  *
-  * Return: 0 (Always)
-  */
+/**
+ * main - copies content of a file to another file
+ * @argc: number of cmd line arguments
+ * @argv: array of cmd line arguments
+ *
+ * Return: 0 (Always)
+ */
 
 int main(int argc, char **argv)
 {

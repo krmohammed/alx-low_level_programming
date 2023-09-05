@@ -51,8 +51,6 @@ int main(int argc, char **argv)
 	}
 	w_close = close(td);
 	if (w_close == -1)
-	{
 		dprintf(STDERR_FILENO, "Can't close fd %d\n", td);
-	}
 	return (0);
 }

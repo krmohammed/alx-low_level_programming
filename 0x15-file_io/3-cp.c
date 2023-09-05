@@ -1,6 +1,6 @@
 #include "main.h"
 
-void prerr(int sta, char *errm, char *ex);
+void print_error(int status, char *err_message, char *extra);
 
  /**
  * main - copies content of a file to another file
@@ -16,21 +16,21 @@ int main(int argc, char **argv)
 	char buff[1024];
 
 	if (argc != 3)
-		prerr(97, "Usage: cp file_from file_to\n", "");
+		print_error(97, "Usage: cp file_from file_to\n", "");
 	fd = open(argv[1], O_RDWR);
 	if (fd == -1)
-		prerr(98, "Error: Can't read from file %s", argv[1]);
+		print_error(98, "Error: Can't read from file %s", argv[1]);
 	td = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (td == -1)
-		prerr(99, "Error: Can't write to %s", argv[2]);
+		print_error(99, "Error: Can't write to %s", argv[2]);
 	while ((n_read = read(fd, buff, 1024)) > 0)
 	{
 		n_write = write(td, buff, n_read);
 		if (n_write != n_read)
-			prerr(99, "Error: Can't write to %s", argv[2]);
+			print_error(99, "Error: Can't write to %s", argv[2]);
 	}
 	if (n_read == -1)
-		prerr(98, "Error: Can't read from file %s", argv[1]);
+		print_error(98, "Error: Can't read from file %s", argv[1]);
 	r_close = close(fd);
 	if (r_close == -1)
 	{
@@ -44,16 +44,16 @@ int main(int argc, char **argv)
 }
 
 /**
- * prerr - prints error
- * @sta: exit status number
- * @errm: error message
- * @ex: extra message
+ * print_error - prints error
+ * @status: exit status number
+ * @err_message: error message
+ * @extra: extra message
  *
  */
 
-void prerr(int sta, char *errm, char *ex)
+void print_error(int status, char *err_message, char *extra)
 {
-	dprintf(STDERR_FILENO, errm, ex);
-	exit(sta);
+	dprintf(STDERR_FILENO, err_message, extra);
+	exit(status);
 }
 

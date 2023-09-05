@@ -1,18 +1,6 @@
 #include "main.h"
 
-/**
- * prerr - prints error
- * @sta: exit status number
- * @errm: error message
- * @ex: extra message
- *
- */
-
-void prerr(int sta, char *errm, char *ex)
-{
-	dprintf(STDERR_FILENO, errm, ex);
-	exit(sta);
-}
+void prerr(int sta, char *errm, char *ex);
 
  /**
  * main - copies content of a file to another file
@@ -54,3 +42,18 @@ int main(int argc, char **argv)
 		dprintf(STDERR_FILENO, "Can't close fd %d\n", td);
 	return (0);
 }
+
+/**
+ * prerr - prints error
+ * @sta: exit status number
+ * @errm: error message
+ * @ex: extra message
+ *
+ */
+
+void prerr(int sta, char *errm, char *ex)
+{
+	dprintf(STDERR_FILENO, errm, ex);
+	exit(sta);
+}
+

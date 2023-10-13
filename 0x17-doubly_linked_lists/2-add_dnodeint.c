@@ -4,7 +4,7 @@
  * add_dnodeint - adds a new node at the beginning of a linked list
  * @head: head node
  * @n: data
- * 
+ *
  * Return: node
  */
 

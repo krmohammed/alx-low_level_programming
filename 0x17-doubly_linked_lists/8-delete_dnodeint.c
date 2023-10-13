@@ -20,8 +20,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	{
 		if (i++ == index)
 			break;
-		else
-			ptr1 = ptr1->next;
+		ptr1 = ptr1->next;
 	}
 	if ((ptr1->prev == NULL) && (ptr1->next == NULL))
 	{

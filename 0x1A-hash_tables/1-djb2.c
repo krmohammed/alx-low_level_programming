@@ -1,5 +1,13 @@
 #include "hash_tables.h"
 
+/**
+ * hash_djb2 - Implementation of the djb2 algorithm
+ * @str: string to generate hash code
+ *
+ * Return: hash_code generated
+ *
+ */
+
 unsigned long int hash_djb2(const unsigned char *str)
 {
 	unsigned long int hash_code = 5381;

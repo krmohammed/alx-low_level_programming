@@ -40,6 +40,7 @@ shash_table_t *shash_table_create(unsigned long int size)
  * shash_table_set - adds a node to the hashed table
  * sorted format, using chaining collision handling
  *
+ * @ht: hash table
  * @key: key
  * @value: value
  *

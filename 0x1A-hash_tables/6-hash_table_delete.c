@@ -18,14 +18,6 @@ void hash_table_delete(hash_table_t *ht)
 			ptr1 = ht->array[i];
 			while (ptr1)
 			{
-<<<<<<< HEAD
-				if (ptr->key)
-					free(ptr->key);
-				if (ptr->value)
-					free(ptr->value);
-				free(ptr);
-				ptr = ptr->next;
-=======
 				ptr2 = ptr1;
 				if (ptr1->key)
 					free(ptr1->key);
@@ -33,7 +25,6 @@ void hash_table_delete(hash_table_t *ht)
 					free(ptr1->value);
 				free(ptr2);
 				ptr1 = ptr1->next;
->>>>>>> 32c148ff6201472598dd40b8664080cb94f8c759
 			}
 		}
 	}

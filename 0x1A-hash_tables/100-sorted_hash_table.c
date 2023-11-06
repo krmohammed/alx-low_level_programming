@@ -77,7 +77,52 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	hn->next = ht->array[index];
 	ht->array[index] = hn;
 
+	sort_list(hn, ht);
 	return (1);
+}
+
+
+/**
+ * sort_list - adds a node to the sorted hash linked list
+ * @hn: hash node
+ * @ht: hash table
+ *
+ */
+
+void sort_list(shash_node_t *hn, shash_table_t *ht)
+{
+	shash_node_t *ptab, *track;
+
+	ptab = ht->shead;
+	track = ptab;
+	while (ptab)
+	{
+		if (strcmp(ptab->key, hn->key) > 0)
+		{
+			hn->snext = ptab;
+			hn->sprev = ptab->sprev;
+			if (ptab->sprev)
+				ptab->sprev->snext = hn;
+			ptab->sprev = hn;
+			if (hn->sprev == NULL)
+				ht->shead = hn;
+			return;
+		}
+		track = ptab;
+		ptab = ptab->snext;
+	}
+	if (track != ht->shead)
+	{
+		track->snext = hn;
+		hn->sprev = track;
+		hn->snext = NULL;
+		ht->stail = hn;
+		return;
+	}
+	hn->snext = ht->shead;
+	hn->sprev = NULL;
+	ht->shead = hn;
+	ht->stail = hn;
 }
 
 

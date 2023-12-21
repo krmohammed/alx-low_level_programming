@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int printt(void)
+void printt(void)
 {
 	printf("j#0000000000000000000000000000000000000\n");
 	printf("j#000000000000000000@Q**g00000000000000\n");
@@ -28,3 +28,4 @@ int printt(void)
 	printf("j#00000000000000w]+]++qw#00000000000000\n");
 	printf("\"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
 }
+/* Khalil */

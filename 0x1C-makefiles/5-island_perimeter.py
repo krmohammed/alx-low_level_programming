@@ -1,14 +1,13 @@
 #!/usr/bin/python3
 """
+provides the function island_perimeter
 """
 
 def island_perimeter(grid):
     """
+    computes the perimeter of the island
+
+    Args:
+        grid (list): list of lists of integers, rectangular
+        equal row lengths
     """
-    if not isinstance(grid, list):
-        raise TypeError("grid must be a list of integers")
-    if not all([isinstance(i, list) for i in grid]):
-        raise ValueError("grid must be a list of integers")
-    for row in grid:
-        if not all([isinstance(i) for i in row]):
-            raise ValueError("grid must be a list of integers")

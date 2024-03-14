@@ -18,7 +18,7 @@ int exponential_search(int *array, size_t size, int value)
 	if (array == NULL)
 		return (-1);
 	
-	while (hi < size && array[hi] <= value)
+	while (hi < size && array[hi] < value)
 	{
 		printf("Value checked array[%ld]: [%d]\n", hi, array[hi]);
 		lo = hi;
@@ -36,7 +36,8 @@ int exponential_search(int *array, size_t size, int value)
 /**
  * binary_search - searches for a value in a sorted array using Binary search
  * @array: a pointer to the first element of the array to search in
- * @size: number of elements in array
+ * @lo: first element of array (or sub array)
+ * @hi: last element of array (or sub array)
  * @value: value to search for
  *
  * Return: index of value, -1 if array is NULL or value not present

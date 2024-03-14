@@ -17,7 +17,7 @@ int exponential_search(int *array, size_t size, int value)
 
 	if (array == NULL)
 		return (-1);
-	
+
 	while (hi < size && array[hi] < value)
 	{
 		printf("Value checked array[%ld]: [%d]\n", hi, array[hi]);
@@ -28,13 +28,13 @@ int exponential_search(int *array, size_t size, int value)
 		hi = size - 1;
 	printf("Value found between indexes [%ld] and [%ld]\n", lo, hi);
 
-	return binary_search2(array, lo, hi, value);
+	return (binary_search2(array, lo, hi, value));
 }
 
 
 
 /**
- * binary_search - searches for a value in a sorted array using Binary search
+ * binary_search2 - searches for a value in a sorted array using Binary search
  * @array: a pointer to the first element of the array to search in
  * @lo: first element of array (or sub array)
  * @hi: last element of array (or sub array)
